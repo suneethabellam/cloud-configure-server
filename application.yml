@@ -1,0 +1,23 @@
+
+server:
+    port:8989
+
+spring.application.name= GATEWAY-SERVICE
+eureka:
+  client:
+    registerWithEureka:true
+       fetchRegistry:true
+            service-url:
+            defaultZone=http://localhost:8761/eureka/
+             instance.hostname=localhost
+microservice:
+   PAYMENT-SERVICE:
+    endpoints:
+      endpoint:
+      uri :http://PAYMENT-SERVICE/payment/dopayment
+      
+      ORDER-SERVICE:
+        endpoints:
+         endpoint:
+         uri:http://ORDER_SERVICE/order/bookorder
+         
